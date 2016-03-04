@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="#424242"
+    android:id="@+id/card">
+    <TextView
+        android:fontFamily="sans-serif-light"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Dianne Feinstein"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/congressman"
+        android:textColor="#FFFFFF"
+        android:textSize="26.67dp"/>
+    <TextView
+        android:fontFamily="sans-serif-light"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/party"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/congressman"
+        android:text="Independent"
+        android:textColor="#CCFFFFFF"
+        android:textSize="20dp"/>
+</RelativeLayout>

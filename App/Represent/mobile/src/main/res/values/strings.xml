@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">REPRESENT!</string>
+    <string name="lee_email"><u>barbaralee@gmail.com</u></string>
+    <string name="lee_site"><u>barbaraleeforoffice.com</u></string>
+    <string name="boxer_email"><u>barbaraboxer@gmail.com</u></string>
+    <string name="boxer_site"><u>barbaraboxerforoffice.com</u></string>
+    <string name="feinstein_email"><u>diannefeinstein@gmail.com</u></string>
+    <string name="feinstein_site"><u>diannefeinsteinforoffice.com</u></string>
+    <string name="title_activity_detailed">DetailedActivity</string>
+    <string name="bills">Energy Bill\nEducation Bill\nEqual Rights Bill\nNew Beginnings Bill\nInjuries Bill</string>
+    <string name="committees">Energy Committee\nEducation Committee\nEqual Rights Committee</string>
+    <string name="dates">Jan 3, 2016\nSept 23, 2015\nFeb 19, 2015\nDec 3, 2014\nNov 23, 2014</string>
+    <string name="google_app_id">34567</string>
+</resources>

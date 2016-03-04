@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="#424242"
+    android:id="@+id/card">
+    <TextView
+        android:fontFamily="sans-serif-light"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/county"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:text="Santa Clara County"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"/>
+    <TextView
+        android:fontFamily="sans-serif-light"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="2012 Election"
+        android:layout_above="@id/county"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/election2012"
+        android:textColor="#FFFFFF"
+        android:textSize="26.67dp"/>
+    <TextView
+        android:fontFamily="sans-serif-light"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Romney - 50%"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/county"
+        android:id="@+id/romney"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp"/>
+    <TextView
+        android:fontFamily="sans-serif-light"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/obama"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/romney"
+        android:text="Obama - 50%"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp"/>
+</RelativeLayout>

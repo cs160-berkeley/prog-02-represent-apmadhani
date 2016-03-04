@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">REPRESENT!</string>
+    <string name="hello_round">Hello Round World!</string>
+    <string name="hello_square">Hello Square World!</string>
+    <string name="congressman">Dianne Feinstein</string>
+    <string name="party">Republican</string>
+</resources>
