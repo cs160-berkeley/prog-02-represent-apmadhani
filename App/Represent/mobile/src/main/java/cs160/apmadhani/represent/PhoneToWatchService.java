@@ -51,8 +51,8 @@ public class PhoneToWatchService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         // Which cat do we want to feed? Grab this info from INTENT
         // which was passed over when we called startService
-        Bundle extras = intent.getExtras();
-        final String congressmen = extras.getString("congressmen");
+        final String congressmen = intent.getStringExtra("congressmen");
+        Log.wtf("PhonetoWatch", congressmen);
         //Log.e("PHONE TO WATCH", congressmen);
         // Send the message with the cat name
         new Thread(new Runnable() {
@@ -61,7 +61,7 @@ public class PhoneToWatchService extends Service {
                 //first, connect to the apiclient
                 mApiClient.connect();
                 //now that you're connected, send a massage with the cat name
-                sendMessage("/congressmen", "   ");
+                sendMessage("/congressmen", congressmen);
             }
         }).start();
 

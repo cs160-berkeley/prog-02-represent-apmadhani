@@ -9,19 +9,30 @@
         android:fontFamily="sans-serif-light"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:id="@+id/title"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:text="Representative"
+        android:textColor="#CCFFFFFF"
+        android:textSize="20dp"/>
+    <TextView
+        android:fontFamily="sans-serif-light"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:text="Dianne Feinstein"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_above="@id/title"
         android:id="@+id/congressman"
         android:textColor="#FFFFFF"
         android:textSize="26.67dp"/>
+
     <TextView
         android:fontFamily="sans-serif-light"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:id="@+id/party"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/congressman"
+        android:layout_below="@id/title"
         android:text="Independent"
         android:textColor="#CCFFFFFF"
         android:textSize="20dp"/>

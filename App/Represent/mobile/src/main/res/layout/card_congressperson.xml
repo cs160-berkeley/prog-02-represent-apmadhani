@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_marginBottom="5dp"
+    android:layout_width="fill_parent"
+    android:id="@+id/congressperson"
+    xmlns:twittersdk="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/candidate_card"
+        android:background="#FFFFFF">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/twitter" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.2dp"
+            android:id="@+id/separator"
+            android:visibility="visible"
+            android:background="#F5F5F5"
+            android:layout_below="@id/twitter"/>
+
+        <TextView
+            android:layout_margin = "5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Learn More..."
+            android:textSize="15dp"
+            android:id="@+id/member_name"
+            android:layout_marginTop = "3dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="#FFFFFF"
+            android:layout_below="@id/separator"/>
+
+
+        <TextView
+            android:layout_alignParentRight="true"
+            android:layout_margin = "5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Learn More..."
+            android:textSize="15dp"
+            android:id="@+id/learnmore"
+            android:layout_marginTop = "3dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="#CCFFFFFF"
+            android:layout_below="@id/separator"/>
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="3dp"
+            android:src="@drawable/link"
+            android:id="@+id/webIcon"
+            android:layout_below="@id/separator"
+            android:layout_toLeftOf="@id/learnmore"/>
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:src="@drawable/mail"
+            android:id="@+id/mailIcon"
+            android:layout_marginLeft="3dp"
+            android:layout_below="@id/separator"
+            android:layout_toLeftOf="@id/webIcon"/>
+
+    </RelativeLayout>
+</RelativeLayout>

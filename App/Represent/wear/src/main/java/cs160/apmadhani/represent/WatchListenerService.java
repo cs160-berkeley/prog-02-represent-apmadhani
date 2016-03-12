@@ -26,7 +26,7 @@ public class WatchListenerService extends WearableListenerService {
         if( messageEvent.getPath().equalsIgnoreCase( congressmen ) ) {
             String value = new String(messageEvent.getData(), StandardCharsets.UTF_8);
             Intent intent = new Intent(this, CongressionalActivity.class );
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             //you need to add this flag since you're starting a new activity from a service
             intent.putExtra("congressmen", value);
             Log.d("T", "about to start watch CongressionalActivity with "+ value);

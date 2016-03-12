@@ -20,27 +20,30 @@ import android.widget.TextView;
  * Created by Akshay on 3/3/16.
  */
 public class CongressmanFragment extends Fragment {
-    String politician;
+    String politician, title;
     String party;
+    String callPhone;
     boolean election;
     String county;
-    int romney;
-    int obama;
+    double romney;
+    double obama;
     TextView name;
     Context ctx;
     public CongressmanFragment() {
         super();
     }
 
-    public CongressmanFragment(Context ctx, String politician, String party){
+    public CongressmanFragment(Context ctx, String title, String politician, String party, String callPhone){
         super();
         this.politician = politician;
         this.party = party;
         this.election = false;
         this.ctx = ctx;
+        this.title = title;
+        this.callPhone = callPhone;
     }
 
-    public CongressmanFragment(Context ctx, String county, int romney, int obama){
+    public CongressmanFragment(Context ctx, String county, double romney, double obama){
         this.election = true;
         this.county = county;
         this.romney = romney;
@@ -57,9 +60,9 @@ public class CongressmanFragment extends Fragment {
             ((TextView)v.findViewById(R.id.obama)).setText("Obama - "+obama+"%");
             RelativeLayout card = (RelativeLayout)v.findViewById(R.id.card);
             if(obama > romney) {
-                card.setBackgroundColor(0xFF2979FF);
+                card.setBackgroundColor(0xFF4099FF);
             } else if (romney > obama) {
-                card.setBackgroundColor(0xFFE53935);
+                card.setBackgroundColor(0xFFFF6759);
             } else {
                 card.setBackgroundColor(0xFF424242);
             }
@@ -68,12 +71,15 @@ public class CongressmanFragment extends Fragment {
         View v = inflater.inflate(R.layout.congress_card, container, false);
         name = ((TextView)v.findViewById(R.id.congressman));
         name.setText(politician);
+        if(title.equalsIgnoreCase("sen")) {
+            ((TextView) v.findViewById(R.id.title)).setText("Senator");
+        }
         ((TextView)v.findViewById(R.id.party)).setText(party);
         RelativeLayout card = (RelativeLayout)v.findViewById(R.id.card);
         if (party != null && party.equals("Democrat")) {
-            card.setBackgroundColor(0xFF2979FF);
+            card.setBackgroundColor(0xFF4099FF);
         } else if (party != null && party.equals("Republican")) {
-            card.setBackgroundColor(0xFFE53935);
+            card.setBackgroundColor(0xFFFF6759);
         } else {
             card.setBackgroundColor(0xFF424242);
         }
@@ -82,7 +88,7 @@ public class CongressmanFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent sendIntent = new Intent(ctx, WatchToPhoneService.class);
-                sendIntent.putExtra("congressperson", politician);
+                sendIntent.putExtra("congressperson", callPhone);
                 ctx.startService(sendIntent);
             }
         });

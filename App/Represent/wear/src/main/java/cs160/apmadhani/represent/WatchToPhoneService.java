@@ -31,6 +31,7 @@ public class WatchToPhoneService extends Service implements GoogleApiClient.Conn
 
     private GoogleApiClient mWatchApiClient;
     private List<Node> nodes = new ArrayList<>();
+    String congressmen;
 
     @Override
     public void onCreate() {
@@ -57,7 +58,7 @@ public class WatchToPhoneService extends Service implements GoogleApiClient.Conn
         // which was passed over when we called startService
         Bundle extras = intent.getExtras();
         Log.wtf("IN START", "IN START");
-        final String congressmen = extras.getString("congressmen");
+        congressmen = intent.getStringExtra("congressperson");
         //Log.e("PHONE TO WATCH", congressmen);
         // Send the message with the cat name
         new Thread(new Runnable() {
@@ -66,7 +67,8 @@ public class WatchToPhoneService extends Service implements GoogleApiClient.Conn
                 //first, connect to the apiclient
                 mWatchApiClient.connect();
                 //now that you're connected, send a massage with the cat name
-                sendMessage("/member", intent.getStringExtra("congressperson"));
+                Log.wtf("T", "found nodes");
+                sendMessage("/member", congressmen);
                 Log.wtf("Hello", "Sent message");
             }
         }).start();
@@ -89,6 +91,8 @@ public class WatchToPhoneService extends Service implements GoogleApiClient.Conn
                     public void onResult(NodeApi.GetConnectedNodesResult getConnectedNodesResult) {
                         nodes = getConnectedNodesResult.getNodes();
                         Log.wtf("T", "found nodes");
+                        sendMessage("/member", congressmen);
+                        Log.wtf("Hello", "Sent message");
                     }
                 });
     }

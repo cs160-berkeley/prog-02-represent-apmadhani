@@ -31,15 +31,22 @@ private static final String TOAST = "/send_toast";
                 Intent intent = new Intent(this, CongressionalMobile.class );
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 //you need to add this flag since you're starting a new activity from a service
-                intent.putExtra("congressmen", new String[]{"John McCain", "Bernie Sanders", "Marco Rubio"});
+                intent.putExtra("congressmen", "new");
                 Log.d("T", "about to start watch CongressionalActivity with "+ value);
                 startActivity(intent);
             } else {
                 Intent intent = new Intent(this, DetailedView.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                String[] tokens = value.split(",");
+                intent.putExtra("Tweet", Long.parseLong(tokens[0]));
+                intent.putExtra("Name", tokens[1]);
+                intent.putExtra("Party", tokens[2]);
+                intent.putExtra("Termend", tokens[3]);
+                intent.putExtra("ID", tokens[4]);
+                intent.putExtra("Website", tokens[5]);
+                intent.putExtra("Email", tokens[6]);
                 //you need to add this flag since you're starting a new activity from a service
-                intent.putExtra("congressmen", value);
-                Log.d("T", "about to start watch CongressionalActivity with " + value);
+                Log.wtf("T", "about to start watch Detailed with " + value);
                 startActivity(intent);
             }
         }

@@ -1,14 +1,14 @@
 # PROG 02: Represent!
 
-Briefly describe your app here.
+Represent is an app that lets you quickly access information about and contact your congressman through an Android phone/watch combination interface. You can get congressmen by location, zipcode, and by asking the app to randomly choose a county!
 
 ## Authors
 
-FirstName LastName ([your_email@berkeley.edu](mailto:your_email@berkeley.edu))
+Akshay Madhani LastName ([akshaymadhani@berkeley.edu](mailto:akshaymadhani@berkeley.edu))
 
 ## Demo Video
 
-See [your demo video title here] (https://link_to_your_video)
+See [Represent!] (https://www.youtube.com/watch?v=xpFFGZkuhes)
 
 ## Screenshots
 
@@ -16,5 +16,4 @@ See [your demo video title here] (https://link_to_your_video)
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Any other support
+Thank you to Jasper O'Leary and Peggy Chi for helping me so much during office hours! Thank you for your useful section Diane Wang! 

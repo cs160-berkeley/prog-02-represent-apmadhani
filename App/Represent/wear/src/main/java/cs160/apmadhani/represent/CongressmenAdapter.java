@@ -6,6 +6,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.support.wearable.view.CardFragment;
 import android.support.wearable.view.FragmentGridPagerAdapter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 
@@ -16,12 +17,13 @@ public class CongressmenAdapter extends FragmentGridPagerAdapter {
 
     String[] congressmen;
     String[] party;
-    int romney;
-    int obama;
+    String[] callPhone, titles;
+    double romney;
+    double obama;
     String location;
     Context ctx;
 
-    public CongressmenAdapter(Context ctx, FragmentManager fm, String[] congressmen, String[] party, String location, int romney, int obama) {
+    public CongressmenAdapter(Context ctx, FragmentManager fm, String[] titles, String[] congressmen, String[] party, String location, double obama, double romney, String[] callPhone) {
         super(fm);
         this.ctx = ctx;
         this.location = location;
@@ -29,6 +31,8 @@ public class CongressmenAdapter extends FragmentGridPagerAdapter {
         this.obama = obama;
         this.congressmen = congressmen;
         this.party = party;
+        this.titles = titles;
+        this.callPhone = callPhone;
     }
 
 
@@ -38,10 +42,11 @@ public class CongressmenAdapter extends FragmentGridPagerAdapter {
         LayoutInflater inflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         Fragment congressman;
-        if (col == 3) {
+        if (col == titles.length) {
             congressman = new CongressmanFragment(ctx, location, romney, obama);
         } else {
-            congressman = new CongressmanFragment(ctx, congressmen[col], party[col]);
+            Log.wtf(callPhone.length+"", callPhone[0]);
+            congressman = new CongressmanFragment(ctx, titles[col], congressmen[col], party[col], callPhone[col]);
         }
         return congressman;
     }
@@ -54,6 +59,6 @@ public class CongressmenAdapter extends FragmentGridPagerAdapter {
 
     @Override
     public int getColumnCount(int i) {
-        return 4;
+        return titles.length+1;
     }
 }
